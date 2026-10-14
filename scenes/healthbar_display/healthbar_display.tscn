@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://bxqyf7fo2ehoq"]
+
+[ext_resource type="Texture2D" uid="uid://dhi0a3bigekdc" path="res://scenes/healthbar_display/healthbar_display_bg.png" id="1_kb0wj"]
+[ext_resource type="Script" uid="uid://cvytmfv2831s" path="res://scenes/healthbar_display/healthbar_display.gd" id="1_phbvv"]
+[ext_resource type="Texture2D" uid="uid://bigicihpq0e04" path="res://objects/notebook.png" id="2_kqeyo"]
+[ext_resource type="Texture2D" uid="uid://d1xdi15v2sols" path="res://ui/ui_sheet.png" id="3_lvxf3"]
+[ext_resource type="Script" uid="uid://dkgm1cyirubhr" path="res://objects/notebook.gd" id="4_70650"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7wlo"]
+atlas = ExtResource("3_lvxf3")
+region = Rect2(2, 16, 1, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgvuj"]
+atlas = ExtResource("3_lvxf3")
+region = Rect2(0, 16, 1, 1)
+
+[node name="HealthbarDisplay" type="Control" unique_id=558284083]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_phbvv")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1242587002]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_kb0wj")
+
+[node name="Notebook1" type="TextureRect" parent="." unique_id=1345971421]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 77.0
+offset_right = 93.0
+offset_bottom = 141.0
+texture = ExtResource("2_kqeyo")
+script = ExtResource("4_70650")
+
+[node name="Notebook2" type="TextureRect" parent="." unique_id=865038585]
+layout_mode = 0
+offset_left = 98.0
+offset_top = 77.0
+offset_right = 162.0
+offset_bottom = 141.0
+texture = ExtResource("2_kqeyo")
+script = ExtResource("4_70650")
+
+[node name="Notebook3" type="TextureRect" parent="." unique_id=1729838500]
+layout_mode = 0
+offset_left = 162.0
+offset_top = 74.0
+offset_right = 226.0
+offset_bottom = 138.0
+texture = ExtResource("2_kqeyo")
+script = ExtResource("4_70650")
+
+[node name="Notebook4" type="TextureRect" parent="." unique_id=1530338341]
+layout_mode = 0
+offset_left = 228.0
+offset_top = 72.0
+offset_right = 292.0
+offset_bottom = 136.0
+texture = ExtResource("2_kqeyo")
+script = ExtResource("4_70650")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=338767226]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 149.0
+offset_right = 243.0
+offset_bottom = 163.0
+value = 100.0
+nine_patch_stretch = true
+texture_under = SubResource("AtlasTexture_e7wlo")
+texture_progress = SubResource("AtlasTexture_fgvuj")
