@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://bigauvbhxb6de"]
+
+[ext_resource type="Script" uid="uid://c5jrd0ttg5isu" path="res://scenes/menu/menu.gd" id="1_klgdb"]
+[ext_resource type="Texture2D" uid="uid://c3vikrw7irfeg" path="res://scenes/menu/background.png" id="2_mcvr8"]
+[ext_resource type="Texture2D" uid="uid://d1xdi15v2sols" path="res://ui/ui_sheet.png" id="3_e0arn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2vb4"]
+atlas = ExtResource("3_e0arn")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_037ec"]
+atlas = ExtResource("3_e0arn")
+region = Rect2(64, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1o0p"]
+atlas = ExtResource("3_e0arn")
+region = Rect2(32, 0, 32, 16)
+
+[node name="Menu" type="Control" unique_id=273399457]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_klgdb")
+
+[node name="Background" type="TextureRect" parent="." unique_id=920339806]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_mcvr8")
+
+[node name="PlayButton" type="TextureButton" parent="." unique_id=2006450903]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 25.0
+offset_right = 280.0
+offset_bottom = 73.0
+texture_normal = SubResource("AtlasTexture_f2vb4")
+texture_pressed = SubResource("AtlasTexture_037ec")
+texture_hover = SubResource("AtlasTexture_y1o0p")
+stretch_mode = 5
+
+[node name="SettingsButton" type="TextureButton" parent="." unique_id=1177876462]
+layout_mode = 0
+offset_left = 205.0
+offset_top = 80.0
+offset_right = 245.0
+offset_bottom = 120.0
+stretch_mode = 5
+
+[node name="QuitButton" type="TextureButton" parent="." unique_id=1676804905]
+layout_mode = 0
+offset_left = 207.0
+offset_top = 128.0
+offset_right = 247.0
+offset_bottom = 168.0
+stretch_mode = 5
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
