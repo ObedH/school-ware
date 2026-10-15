@@ -10,4 +10,4 @@ func undestroy() -> void:
 
 
 func destroy() -> void:
-	texture = NOTEBOOK
+	texture = NOTEBOOK_BROKEN

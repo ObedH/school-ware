@@ -14,6 +14,9 @@ region = Rect2(2, 16, 1, 1)
 atlas = ExtResource("3_lvxf3")
 region = Rect2(0, 16, 1, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_e7wlo"]
+font_size = 24
+
 [node name="HealthbarDisplay" type="Control" unique_id=558284083]
 layout_mode = 3
 anchors_preset = 15
@@ -75,3 +78,12 @@ value = 100.0
 nine_patch_stretch = true
 texture_under = SubResource("AtlasTexture_e7wlo")
 texture_progress = SubResource("AtlasTexture_fgvuj")
+
+[node name="Label" type="Label" parent="." unique_id=1058804861]
+layout_mode = 0
+offset_left = 119.0
+offset_top = 21.0
+offset_right = 197.0
+offset_bottom = 55.0
+text = "3 Lives"
+label_settings = SubResource("LabelSettings_e7wlo")
