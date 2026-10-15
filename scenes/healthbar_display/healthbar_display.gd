@@ -28,7 +28,9 @@ func start() -> void:
 
 
 func _process(delta: float) -> void:
-	timer += delta
-	texture_progress_bar.value = 100 - 100 * (timer / stay_time)
-	if timer >= stay_time:
-		finished.emit()
+	if timer >= 0:
+		timer += delta
+		texture_progress_bar.value = 100 - 100 * (timer / stay_time)
+		if timer >= stay_time:
+			finished.emit()
+			timer = -1

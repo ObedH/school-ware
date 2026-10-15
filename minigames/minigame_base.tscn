@@ -3,9 +3,19 @@
 [ext_resource type="Script" uid="uid://c32fpdx0v1gv5" path="res://minigames/minigame.gd" id="1_5v48h"]
 [ext_resource type="PackedScene" uid="uid://bxqyf7fo2ehoq" path="res://scenes/healthbar_display/healthbar_display.tscn" id="2_6creq"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_e7wlo"]
+font_color = Color(0.9882353, 0.9882353, 0.9882353, 1)
+
 [node name="MinigameBase" type="Node2D" unique_id=1444785987]
+process_mode = 1
 script = ExtResource("1_5v48h")
 
+[node name="TimeDisplayer" type="Label" parent="." unique_id=1364052503]
+offset_right = 47.0
+offset_bottom = 23.0
+text = "Time: 0.0"
+label_settings = SubResource("LabelSettings_e7wlo")
+
 [node name="HealthbarDisplay" parent="." unique_id=558284083 instance=ExtResource("2_6creq")]
-process_mode = 3
+process_mode = 2
 offset_transform_enabled = true
