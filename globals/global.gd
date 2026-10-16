@@ -9,7 +9,7 @@ var levels: Array = [
 
 
 func next_level() -> void:
-	if level_num >= levels.size() + 2:
+	if level_num >= levels.size():
 		print("Level oob!")
 		return
 	level_num += 1

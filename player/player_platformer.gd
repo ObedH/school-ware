@@ -10,8 +10,10 @@ const STOP_MULT = 2.0
 
 var is_falling: bool = false
 var input_locked: bool = true
+var jb: bool = false
 
 @onready var sprite: AnimatedSprite2D = $Sprite
+@onready var jb_timer: Timer = $JBTimer
 
 
 func _physics_process(delta: float) -> void:
@@ -28,8 +30,13 @@ func _physics_process(delta: float) -> void:
 		is_falling = false
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor() and not input_locked:
+	if Input.is_action_just_pressed("jump"):
+		jb = true
+		jb_timer.start()
+	
+	if jb and is_on_floor() and not input_locked:
 		velocity.y = JUMP_VELOCITY
+		jb = false
 	
 	if Input.is_action_just_released("jump") and not input_locked:
 		is_falling = true
@@ -48,3 +55,7 @@ func _physics_process(delta: float) -> void:
 		sprite.flip_h = false
 
 	move_and_slide()
+
+
+func _on_jb_timer_timeout() -> void:
+	jb = false
