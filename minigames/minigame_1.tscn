@@ -165,7 +165,4 @@ offset_top = 5.0
 offset_right = 79.0
 offset_bottom = 28.0
 
-[node name="HealthbarDisplay" parent="." index="9" unique_id=558284083]
-visible = false
-
 [connection signal="area_entered" from="ManuScript/Area2D" to="ManuScript" method="_on_area_2d_area_entered"]
