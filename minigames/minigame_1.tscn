@@ -1,0 +1,154 @@
+[gd_scene format=4 uid="uid://bu7yuvf63rxmn"]
+
+[ext_resource type="PackedScene" uid="uid://deaqoee4cjydv" path="res://minigames/minigame_base.tscn" id="1_0atlx"]
+[ext_resource type="TileSet" uid="uid://3ywhuhg5be8w" path="res://tilesets/basic_tileset.tres" id="2_p0bon"]
+[ext_resource type="Script" uid="uid://bttkbwihex3d6" path="res://minigames/minigame_1.gd" id="2_q6hqq"]
+[ext_resource type="Texture2D" uid="uid://03koi8w5j2yc" path="res://minigames/history_bg.png" id="3_elwks"]
+[ext_resource type="PackedScene" uid="uid://h7v3kjt4l8xf" path="res://player/player_platformer.tscn" id="3_q6hqq"]
+[ext_resource type="Script" uid="uid://ddtcg8v30ry84" path="res://player/player_platformer.gd" id="4_jbnu7"]
+[ext_resource type="Texture2D" uid="uid://brufl4tba72jo" path="res://minigames/gwash.png" id="6_q6hqq"]
+[ext_resource type="Texture2D" uid="uid://b8vs8cjwqspcc" path="res://minigames/apple_tree.png" id="7_jbnu7"]
+[ext_resource type="Script" uid="uid://c7ybuxyujxoa1" path="res://minigames/newleveltrigger.gd" id="8_kgnyx"]
+[ext_resource type="Texture2D" uid="uid://dawdqs0o34yae" path="res://minigames/manuscript.png" id="9_ymfxl"]
+[ext_resource type="PackedScene" uid="uid://eqyo07414ofo" path="res://components/floating_component.tscn" id="10_ktgju"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kgnyx"]
+size = Vector2(13, 15)
+
+[sub_resource type="Animation" id="Animation_hycv5"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player/Camera2D:zoom:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player/Camera2D:zoom:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GWash:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_7blm8"]
+resource_name = "intro"
+length = 3.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player/Camera2D:zoom:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.033, 1, 2, -0.2, 0, 0, 0, 2, -0.2888889, 0, 0, 0, 1, 0, 1, 0, 0.5),
+"times": PackedFloat32Array(0.1, 0.5, 2.5, 3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player/Camera2D:zoom:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 0, 2, 0),
+"points": PackedFloat32Array(1, -0.060633916, -0.24253567, 0.25, 1, 2, -0.2, 0, 0, 0, 2, -0.33333334, 0, 0, 0, 1, -0.094, 1, 0, 0),
+"times": PackedFloat32Array(0.1, 0.5, 2.5, 3)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GWash:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.76666665, 2.1333334, 2.6666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_71kwf"]
+_data = {
+&"RESET": SubResource("Animation_hycv5"),
+&"intro": SubResource("Animation_7blm8")
+}
+
+[node name="Minigame1" unique_id=1444785987 node_paths=PackedStringArray("director") instance=ExtResource("1_0atlx")]
+minigame_name = "History"
+director = NodePath("Director")
+
+[node name="Director" type="Node2D" parent="." index="0" unique_id=1382386537]
+script = ExtResource("2_q6hqq")
+
+[node name="Background" type="Sprite2D" parent="." index="1" unique_id=1302843597]
+position = Vector2(160, 90)
+texture = ExtResource("3_elwks")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." index="2" unique_id=1940333049]
+tile_map_data = PackedByteArray("AAAAAAkAAAABAAAAAAAAAAoAAAABAAAAAAAAAAsAAAABAAAAAAAAAAMAAAABAAAAAAAAAAAAAAABAAAAAAAAAAEAAAABAAAAAAAAAAIAAAABAAAAAAAAAAQAAAABAAAAAAAAAAUAAAABAAAAAAAAAAYAAAABAAAAAAAAAAcAAAABAAAAAAAAAAgAAAABAAAAAAATAAAAAAABAAAAAAABAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAABAAAAAAAEAAAAAAABAAAAAAAFAAAAAAABAAAAAAAGAAAAAAABAAAAAAAHAAAAAAABAAAAAAAIAAAAAAABAAAAAAAJAAAAAAABAAAAAAAKAAAAAAABAAAAAAALAAAAAAABAAAAAAAMAAAAAAABAAAAAAANAAAAAAABAAAAAAAOAAAAAAABAAAAAAAPAAAAAAABAAAAAAAQAAAAAAABAAAAAAARAAAAAAABAAAAAAASAAAAAAABAAAAAAAnABUAAAABAAAAAAAAABUAAAABAAAAAAAAABYAAAABAAAAAAABABUAAAABAAAAAAABABYAAAABAAAAAAACABUAAAABAAAAAAACABYAAAABAAAAAAADABUAAAABAAAAAAADABYAAAABAAAAAAAEABUAAAABAAAAAAAEABYAAAABAAAAAAAFABUAAAABAAAAAAAFABYAAAABAAAAAAAGABUAAAABAAAAAAAGABYAAAABAAAAAAAHABUAAAABAAAAAAAHABYAAAABAAAAAAAIABUAAAABAAAAAAAIABYAAAABAAAAAAAJABUAAAABAAAAAAAJABYAAAABAAAAAAAKABUAAAABAAAAAAAKABYAAAABAAAAAAALABUAAAABAAAAAAALABYAAAABAAAAAAAMABUAAAABAAAAAAAMABYAAAABAAAAAAANABUAAAABAAAAAAANABYAAAABAAAAAAAOABUAAAABAAAAAAAOABYAAAABAAAAAAAPABUAAAABAAAAAAAPABYAAAABAAAAAAAQABUAAAABAAAAAAAQABYAAAABAAAAAAARABUAAAABAAAAAAARABYAAAABAAAAAAASABUAAAABAAAAAAASABYAAAABAAAAAAATABUAAAABAAAAAAATABYAAAABAAAAAAAUABUAAAABAAAAAAAUABYAAAABAAAAAAAVABUAAAABAAAAAAAVABYAAAABAAAAAAAWABUAAAABAAAAAAAWABYAAAABAAAAAAAXABUAAAABAAAAAAAXABYAAAABAAAAAAAYABUAAAABAAAAAAAYABYAAAABAAAAAAAZABUAAAABAAAAAAAZABYAAAABAAAAAAAaABUAAAABAAAAAAAaABYAAAABAAAAAAAbABUAAAABAAAAAAAbABYAAAABAAAAAAAcABUAAAABAAAAAAAcABYAAAABAAAAAAAdABUAAAABAAAAAAAdABYAAAABAAAAAAAeABUAAAABAAAAAAAeABYAAAABAAAAAAAfABUAAAABAAAAAAAfABYAAAABAAAAAAAgABUAAAABAAAAAAAgABYAAAABAAAAAAAhABUAAAABAAAAAAAhABYAAAABAAAAAAAiABUAAAABAAAAAAAiABYAAAABAAAAAAAjABUAAAABAAAAAAAjABYAAAABAAAAAAAkABUAAAABAAAAAAAkABYAAAABAAAAAAAlABUAAAABAAAAAAAlABYAAAABAAAAAAAmABUAAAABAAAAAAAmABYAAAABAAAAAAAnABYAAAABAAAAAAAAAAwAAAABAAAAAAAAAA0AAAABAAAAAAAAAA4AAAABAAAAAAAAAA8AAAABAAAAAAAAABAAAAABAAAAAAAAABEAAAABAAAAAAAAABIAAAABAAAAAAAAABMAAAABAAAAAAAAABQAAAABAAAAAAAnAAAAAAABAAAAAAAnAAEAAAABAAAAAAAnAAIAAAABAAAAAAAnAAMAAAABAAAAAAAnAAQAAAABAAAAAAAnAAUAAAABAAAAAAAnAAYAAAABAAAAAAAnAAcAAAABAAAAAAAnAAgAAAABAAAAAAAnAAkAAAABAAAAAAAnAAoAAAABAAAAAAAnAAsAAAABAAAAAAAnAAwAAAABAAAAAAAnAA0AAAABAAAAAAAnAA4AAAABAAAAAAAnAA8AAAABAAAAAAAnABAAAAABAAAAAAAnABEAAAABAAAAAAAnABIAAAABAAAAAAAnABMAAAABAAAAAAAnABQAAAABAAAAAAAUAAAAAAABAAAAAAAVAAAAAAABAAAAAAAWAAAAAAABAAAAAAAXAAAAAAABAAAAAAAYAAAAAAABAAAAAAAZAAAAAAABAAAAAAAaAAAAAAABAAAAAAAbAAAAAAABAAAAAAAcAAAAAAABAAAAAAAdAAAAAAABAAAAAAAeAAAAAAABAAAAAAAfAAAAAAABAAAAAAAgAAAAAAABAAAAAAAhAAAAAAABAAAAAAAiAAAAAAABAAAAAAAjAAAAAAABAAAAAAAkAAAAAAABAAAAAAAlAAAAAAABAAAAAAAmAAAAAAABAAAAAAABABMAAAABAAAAAAABABQAAAABAAAAAAACABMAAAABAAAAAAACABQAAAABAAAAAAADABMAAAABAAAAAAADABQAAAABAAAAAAAEABMAAAABAAAAAAAEABQAAAABAAAAAAAFABMAAAABAAAAAAAFABQAAAABAAAAAAAGABMAAAABAAAAAAAGABQAAAABAAAAAAAHABMAAAABAAAAAAAHABQAAAABAAAAAAAIABMAAAABAAAAAAAIABQAAAABAAAAAAAJABMAAAABAAAAAAAJABQAAAABAAAAAAAKABMAAAABAAAAAAAKABQAAAABAAAAAAALABMAAAABAAAAAAALABQAAAABAAAAAAAMABMAAAABAAAAAAAMABQAAAABAAAAAAANABMAAAABAAAAAAANABQAAAABAAAAAAAOABMAAAABAAAAAAAOABQAAAABAAAAAAAPABMAAAABAAAAAAAPABQAAAABAAAAAAAQABMAAAABAAAAAAAQABQAAAABAAAAAAARABMAAAABAAAAAAARABQAAAABAAAAAAASABMAAAABAAAAAAASABQAAAABAAAAAAATABMAAAABAAAAAAATABQAAAABAAAAAAAUABMAAAABAAAAAAAUABQAAAABAAAAAAAVABMAAAABAAAAAAAVABQAAAABAAAAAAAWABMAAAABAAAAAAAWABQAAAABAAAAAAAXABMAAAABAAAAAAAXABQAAAABAAAAAAAYABMAAAABAAAAAAAYABQAAAABAAAAAAAZABMAAAABAAAAAAAZABQAAAABAAAAAAAaABMAAAABAAAAAAAaABQAAAABAAAAAAAbABMAAAABAAAAAAAbABQAAAABAAAAAAAcABMAAAABAAAAAAAcABQAAAABAAAAAAAdABMAAAABAAAAAAAdABQAAAABAAAAAAAeABMAAAABAAAAAAAeABQAAAABAAAAAAAfABMAAAABAAAAAAAfABQAAAABAAAAAAAgABMAAAABAAAAAAAgABQAAAABAAAAAAAhABMAAAABAAAAAAAhABQAAAABAAAAAAAiABMAAAABAAAAAAAiABQAAAABAAAAAAAjABMAAAABAAAAAAAjABQAAAABAAAAAAAkABMAAAABAAAAAAAkABQAAAABAAAAAAAlABMAAAABAAAAAAAlABQAAAABAAAAAAAmABMAAAABAAAAAAAmABQAAAABAAAAAAAfAA8AAAABAAAAAAAgAA8AAAABAAAAAAAhAA8AAAABAAAAAAAiAA8AAAABAAAAAAAjAA8AAAABAAAAAAAkAA8AAAABAAAAAAAlAA8AAAABAAAAAAAmAA8AAAABAAAAAAAVAAgAAAABAAAAAAAWAAgAAAABAAAAAAAXAAgAAAABAAAAAAAYAAgAAAABAAAAAAAZAAgAAAABAAAAAAAKAAUAAAABAAAAAAALAAUAAAABAAAAAAAMAAUAAAABAAAAAAANAAUAAAABAAAAAAAOAAUAAAABAAAAAAAPAAUAAAABAAAAAAAVAAwAAAABAAAAAAAWAAwAAAABAAAAAAAXAAwAAAABAAAAAAAYAAwAAAABAAAAAAAZAAwAAAABAAAAAAAaAAwAAAABAAAAAAAbAAwAAAABAAAAAAABAAcAAAABAAAAAAACAAcAAAABAAAAAAADAAcAAAABAAAAAAAEAAcAAAABAAAAAAAFAAcAAAABAAAAAAAGAAcAAAABAAAAAAAHAAcAAAABAAAAAAAQAAUAAAABAAAAAAA=")
+tile_set = ExtResource("2_p0bon")
+
+[node name="GWash" type="Sprite2D" parent="." index="3" unique_id=1777263382]
+visible = false
+position = Vector2(125.999985, 124)
+rotation = 0.106049
+texture = ExtResource("6_q6hqq")
+
+[node name="AppleTree" type="Sprite2D" parent="." index="4" unique_id=1117842525]
+position = Vector2(56, 135)
+texture = ExtResource("7_jbnu7")
+
+[node name="ManuScript" type="Sprite2D" parent="." index="5" unique_id=1774060459]
+position = Vector2(29, 34)
+texture = ExtResource("9_ymfxl")
+script = ExtResource("8_kgnyx")
+
+[node name="FloatingComponent" parent="ManuScript" index="0" unique_id=248928798 node_paths=PackedStringArray("actor") instance=ExtResource("10_ktgju")]
+actor = NodePath("..")
+
+[node name="Area2D" type="Area2D" parent="ManuScript" index="1" unique_id=1923966590]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ManuScript/Area2D" index="0" unique_id=1392401759]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_kgnyx")
+
+[node name="IntroPlayer" type="AnimationPlayer" parent="." index="6" unique_id=1339569085]
+libraries/ = SubResource("AnimationLibrary_71kwf")
+
+[node name="Player" parent="." index="7" unique_id=805804944 instance=ExtResource("3_q6hqq")]
+position = Vector2(198, 144)
+script = ExtResource("4_jbnu7")
+
+[node name="Camera2D" type="Camera2D" parent="Player" index="2" unique_id=155402753]
+position = Vector2(-62.525, -23.075)
+limit_left = 0
+limit_top = 0
+limit_right = 320
+limit_bottom = 180
+
+[connection signal="area_entered" from="ManuScript/Area2D" to="ManuScript" method="_on_area_2d_area_entered"]

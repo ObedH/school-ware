@@ -12,10 +12,14 @@ var timer: float
 @onready var notebook_2: Notebook = $Notebook2
 @onready var notebook_3: Notebook = $Notebook3
 @onready var notebook_4: Notebook = $Notebook4
+@onready var live_counter: Label = $LiveCounter
+@onready var level_indicator: Label = $LevelIndicator
 
 
-func start() -> void:
+func start(level_name: String) -> void:
 	timer = 0
+	live_counter.text = "%d Lives" % Global.lives
+	level_indicator.text = "Level %d: %s" % [Global.level_num, level_name]
 	match Global.lives:
 		3:
 			notebook_4.destroy()

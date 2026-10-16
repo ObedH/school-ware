@@ -15,7 +15,7 @@ atlas = ExtResource("3_lvxf3")
 region = Rect2(0, 16, 1, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_e7wlo"]
-font_size = 24
+font_size = 20
 
 [node name="HealthbarDisplay" type="Control" unique_id=558284083]
 layout_mode = 3
@@ -79,11 +79,21 @@ nine_patch_stretch = true
 texture_under = SubResource("AtlasTexture_e7wlo")
 texture_progress = SubResource("AtlasTexture_fgvuj")
 
-[node name="Label" type="Label" parent="." unique_id=1058804861]
+[node name="LiveCounter" type="Label" parent="." unique_id=1058804861]
 layout_mode = 0
-offset_left = 119.0
-offset_top = 21.0
-offset_right = 197.0
-offset_bottom = 55.0
-text = "3 Lives"
+offset_left = 128.0
+offset_top = 47.0
+offset_right = 198.0
+offset_bottom = 75.0
+text = "4 Lives"
 label_settings = SubResource("LabelSettings_e7wlo")
+
+[node name="LevelIndicator" type="Label" parent="." unique_id=523876004]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 15.0
+offset_right = 265.0
+offset_bottom = 43.0
+text = "Level 1: Pre-Algebra"
+label_settings = SubResource("LabelSettings_e7wlo")
+horizontal_alignment = 1
