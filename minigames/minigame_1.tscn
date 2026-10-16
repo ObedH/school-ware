@@ -150,7 +150,7 @@ shape = SubResource("RectangleShape2D_kgnyx")
 libraries/ = SubResource("AnimationLibrary_71kwf")
 
 [node name="Player" parent="." index="7" unique_id=805804944 instance=ExtResource("3_q6hqq")]
-position = Vector2(198, 144)
+position = Vector2(198, 152)
 
 [node name="Camera2D" type="Camera2D" parent="Player" index="2" unique_id=155402753]
 position = Vector2(-62.525, -23.075)
@@ -164,5 +164,8 @@ offset_left = 9.0
 offset_top = 5.0
 offset_right = 79.0
 offset_bottom = 28.0
+
+[node name="HealthbarDisplay" parent="." index="9" unique_id=558284083]
+visible = false
 
 [connection signal="area_entered" from="ManuScript/Area2D" to="ManuScript" method="_on_area_2d_area_entered"]
