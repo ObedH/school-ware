@@ -41,7 +41,7 @@ func _on_healthbar_display_finished() -> void:
 	healthbar_display_tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	healthbar_display_tween.set_ease(Tween.EASE_OUT)
 	healthbar_display_tween.set_trans(Tween.TRANS_CUBIC)
-	healthbar_display_tween.tween_property(healthbar_display, "offset_transform_position:y", 180, healthbar_dissapear_duration)
+	healthbar_display_tween.tween_property(healthbar_display, "position:y", 180, healthbar_dissapear_duration)
 
 	await healthbar_display_tween.finished
 	get_tree().paused = false

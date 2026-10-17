@@ -21,3 +21,4 @@ label_settings = SubResource("LabelSettings_e7wlo")
 [node name="HealthbarDisplay" parent="." unique_id=558284083 instance=ExtResource("2_6creq")]
 process_mode = 2
 offset_transform_enabled = true
+mouse_filter = 2

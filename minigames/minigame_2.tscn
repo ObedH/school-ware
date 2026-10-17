@@ -1,0 +1,151 @@
+[gd_scene format=3 uid="uid://fyuf68tmkobb"]
+
+[ext_resource type="PackedScene" uid="uid://deaqoee4cjydv" path="res://minigames/minigame_base.tscn" id="1_igb0m"]
+[ext_resource type="Texture2D" uid="uid://dcp5wuph6auow" path="res://minigames/prealg_bg.png" id="2_6bmyk"]
+[ext_resource type="Script" uid="uid://khdmy03m0xd7" path="res://minigames/minigame_2.gd" id="2_b8rp4"]
+[ext_resource type="Texture2D" uid="uid://d1xdi15v2sols" path="res://ui/ui_sheet.png" id="3_m4c8i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8rp4"]
+atlas = ExtResource("3_m4c8i")
+region = Rect2(16, 16, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6bmyk"]
+atlas = ExtResource("3_m4c8i")
+region = Rect2(48, 16, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iao6y"]
+atlas = ExtResource("3_m4c8i")
+region = Rect2(112, 16, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fticr"]
+atlas = ExtResource("3_m4c8i")
+region = Rect2(208, 16, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgnic"]
+atlas = ExtResource("3_m4c8i")
+region = Rect2(144, 16, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4c8i"]
+atlas = ExtResource("3_m4c8i")
+region = Rect2(16, 96, 144, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_452qt"]
+atlas = ExtResource("3_m4c8i")
+region = Rect2(160, 96, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q2y4a"]
+atlas = ExtResource("3_m4c8i")
+region = Rect2(208, 96, 32, 16)
+
+[sub_resource type="GDScript" id="GDScript_b8rp4"]
+script/source = "extends TextureButton
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_euvfc"]
+atlas = ExtResource("3_m4c8i")
+region = Rect2(160, 112, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yew4i"]
+atlas = ExtResource("3_m4c8i")
+region = Rect2(208, 112, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7wlo"]
+atlas = ExtResource("3_m4c8i")
+region = Rect2(160, 128, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2530"]
+atlas = ExtResource("3_m4c8i")
+region = Rect2(208, 128, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_botlb"]
+atlas = ExtResource("3_m4c8i")
+region = Rect2(160, 144, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s35gv"]
+atlas = ExtResource("3_m4c8i")
+region = Rect2(208, 144, 32, 16)
+
+[node name="Minigame2" unique_id=1444785987 node_paths=PackedStringArray("director") instance=ExtResource("1_igb0m")]
+minigame_name = "Pre-Algebra"
+minigame_time = 5.0
+director = NodePath("Controller")
+
+[node name="Controller" type="Node2D" parent="." index="0" unique_id=820061001]
+script = ExtResource("2_b8rp4")
+
+[node name="Background" type="Sprite2D" parent="." index="1" unique_id=466065219]
+position = Vector2(160, 90)
+texture = ExtResource("2_6bmyk")
+
+[node name="Symbol_X" type="Sprite2D" parent="." index="2" unique_id=1127317568]
+position = Vector2(91, 48)
+texture = SubResource("AtlasTexture_b8rp4")
+
+[node name="Symbol_Eq" type="Sprite2D" parent="." index="3" unique_id=235590463]
+position = Vector2(182, 48)
+texture = SubResource("AtlasTexture_6bmyk")
+
+[node name="Symbol_Plus" type="Sprite2D" parent="." index="4" unique_id=1593634404]
+position = Vector2(125, 48)
+texture = SubResource("AtlasTexture_iao6y")
+
+[node name="Symbol_1" type="Sprite2D" parent="." index="5" unique_id=896485862]
+position = Vector2(150, 48)
+texture = SubResource("AtlasTexture_fticr")
+
+[node name="Symbol_3" type="Sprite2D" parent="." index="6" unique_id=1154144433]
+position = Vector2(210, 49)
+texture = SubResource("AtlasTexture_bgnic")
+
+[node name="Prompt_WhatisX" type="Sprite2D" parent="." index="7" unique_id=342216928]
+position = Vector2(149, 90)
+texture = SubResource("AtlasTexture_m4c8i")
+
+[node name="Answer2" type="TextureButton" parent="." index="8" unique_id=746103000]
+offset_left = 234.0
+offset_top = 84.0
+offset_right = 278.0
+offset_bottom = 100.0
+texture_normal = SubResource("AtlasTexture_452qt")
+texture_hover = SubResource("AtlasTexture_q2y4a")
+script = SubResource("GDScript_b8rp4")
+
+[node name="Answer3" type="TextureButton" parent="." index="9" unique_id=1207403519]
+offset_left = 234.0
+offset_top = 102.0
+offset_right = 278.0
+offset_bottom = 118.0
+texture_normal = SubResource("AtlasTexture_euvfc")
+texture_hover = SubResource("AtlasTexture_yew4i")
+
+[node name="Answer4" type="TextureButton" parent="." index="10" unique_id=1098421128]
+offset_left = 234.0
+offset_top = 120.0
+offset_right = 282.0
+offset_bottom = 136.0
+texture_normal = SubResource("AtlasTexture_e7wlo")
+texture_hover = SubResource("AtlasTexture_s2530")
+
+[node name="Answer5" type="TextureButton" parent="." index="11" unique_id=1685167518]
+offset_left = 234.0
+offset_top = 138.0
+offset_right = 278.0
+offset_bottom = 154.0
+texture_normal = SubResource("AtlasTexture_botlb")
+texture_hover = SubResource("AtlasTexture_s35gv")
+
+[connection signal="pressed" from="Answer2" to="Controller" method="_on_answer_2_pressed"]
+[connection signal="pressed" from="Answer2" to="Answer2" method="_on_pressed"]
+[connection signal="pressed" from="Answer3" to="Controller" method="_on_answer_3_pressed"]
+[connection signal="pressed" from="Answer4" to="Controller" method="_on_answer_4_pressed"]
+[connection signal="pressed" from="Answer5" to="Controller" method="_on_answer_5_pressed"]

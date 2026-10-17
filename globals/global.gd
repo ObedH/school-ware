@@ -4,7 +4,8 @@ var level_num: int = 1
 var lives: int = 4
 
 var levels: Array = [
-	"res://minigames/minigame_1.tscn"
+	"res://minigames/minigame_1.tscn",
+	"res://minigames/minigame_2.tscn"
 ]
 
 
@@ -13,7 +14,7 @@ func next_level() -> void:
 		print("Level oob!")
 		return
 	level_num += 1
-	get_tree().change_scene_to_file(levels[level_num - 1])
+	get_tree().change_scene_to_file.call_deferred(levels[level_num - 1])
 
 
 func die() -> void:
