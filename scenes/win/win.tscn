@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://cgw65wgukkfsv"]
+
+[ext_resource type="Script" uid="uid://dtnu4crdpgpvq" path="res://scenes/win/win.gd" id="1_020m0"]
+[ext_resource type="Texture2D" uid="uid://djf2gk4jy73qu" path="res://scenes/win/win_bg.png" id="2_bhp81"]
+[ext_resource type="Texture2D" uid="uid://d1xdi15v2sols" path="res://ui/ui_sheet.png" id="3_vx0oi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1dboi"]
+atlas = ExtResource("3_vx0oi")
+region = Rect2(96, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qpr7g"]
+atlas = ExtResource("3_vx0oi")
+region = Rect2(128, 0, 32, 16)
+
+[node name="Win" type="Control" unique_id=339507639]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_020m0")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1576450980]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_bhp81")
+
+[node name="BackButton" type="TextureButton" parent="." unique_id=1824783177]
+layout_mode = 0
+offset_left = 142.0
+offset_top = 141.0
+offset_right = 182.0
+offset_bottom = 181.0
+texture_normal = SubResource("AtlasTexture_1dboi")
+texture_hover = SubResource("AtlasTexture_qpr7g")
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_pressed"]

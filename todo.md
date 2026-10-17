@@ -3,3 +3,5 @@
 	- Next: Prealgebra
 - Maybe coyote time or better platformer movement
 - Maybe animate George Washington
+- Make a real death screen
+- Refine the pixel art ui

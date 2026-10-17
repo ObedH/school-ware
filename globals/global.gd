@@ -11,7 +11,7 @@ var levels: Array = [
 
 func next_level() -> void:
 	if level_num >= levels.size():
-		print("Level oob!")
+		get_tree().change_scene_to_file.call_deferred("res://scenes/win/win.tscn")
 		return
 	level_num += 1
 	get_tree().change_scene_to_file.call_deferred(levels[level_num - 1])
