@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bigicihpq0e04" path="res://objects/notebook.png" id="2_kqeyo"]
 [ext_resource type="Texture2D" uid="uid://d1xdi15v2sols" path="res://ui/ui_sheet.png" id="3_lvxf3"]
 [ext_resource type="Script" uid="uid://dkgm1cyirubhr" path="res://objects/notebook.gd" id="4_70650"]
+[ext_resource type="Script" uid="uid://d4b736bek5d28" path="res://scenes/healthbar_display/number.gd" id="6_2bk65"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e7wlo"]
 atlas = ExtResource("3_lvxf3")
@@ -13,6 +14,42 @@ region = Rect2(2, 16, 1, 1)
 [sub_resource type="AtlasTexture" id="AtlasTexture_fgvuj"]
 atlas = ExtResource("3_lvxf3")
 region = Rect2(0, 16, 1, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qygop"]
+atlas = ExtResource("3_lvxf3")
+region = Rect2(240, 16, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2bk65"]
+atlas = ExtResource("3_lvxf3")
+region = Rect2(208, 16, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dojgg"]
+atlas = ExtResource("3_lvxf3")
+region = Rect2(80, 16, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_egsd8"]
+atlas = ExtResource("3_lvxf3")
+region = Rect2(144, 16, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_em1em"]
+atlas = ExtResource("3_lvxf3")
+region = Rect2(240, 16, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nst2j"]
+atlas = ExtResource("3_lvxf3")
+region = Rect2(272, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vx6a2"]
+atlas = ExtResource("3_lvxf3")
+region = Rect2(208, 48, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_imdf5"]
+atlas = ExtResource("3_lvxf3")
+region = Rect2(0, 48, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fwhn2"]
+atlas = ExtResource("3_lvxf3")
+region = Rect2(64, 48, 144, 32)
 
 [sub_resource type="LabelSettings" id="LabelSettings_e7wlo"]
 font_size = 20
@@ -79,16 +116,60 @@ nine_patch_stretch = true
 texture_under = SubResource("AtlasTexture_e7wlo")
 texture_progress = SubResource("AtlasTexture_fgvuj")
 
-[node name="LiveCounter" type="Label" parent="." unique_id=1058804861]
+[node name="Number" type="TextureRect" parent="." unique_id=234822376]
 layout_mode = 0
-offset_left = 128.0
-offset_top = 47.0
-offset_right = 198.0
-offset_bottom = 75.0
-text = "4 Lives"
-label_settings = SubResource("LabelSettings_e7wlo")
+offset_left = 111.0
+offset_top = 39.0
+offset_right = 143.0
+offset_bottom = 71.0
+texture = SubResource("AtlasTexture_qygop")
+script = ExtResource("6_2bk65")
+numbers = Array[Texture]([null, SubResource("AtlasTexture_2bk65"), SubResource("AtlasTexture_dojgg"), SubResource("AtlasTexture_egsd8"), SubResource("AtlasTexture_em1em")])
+
+[node name="Colon" type="TextureRect" parent="." unique_id=1128988631]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 23.0
+offset_right = 142.0
+offset_bottom = 39.0
+texture = SubResource("AtlasTexture_nst2j")
+
+[node name="Lives" type="TextureRect" parent="." unique_id=1509091277]
+layout_mode = 0
+offset_left = 153.0
+offset_top = 35.0
+offset_right = 217.0
+offset_bottom = 67.0
+texture = SubResource("AtlasTexture_vx6a2")
+
+[node name="Level" type="TextureRect" parent="." unique_id=1280381405]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 4.0
+offset_right = 106.0
+offset_bottom = 36.0
+texture = SubResource("AtlasTexture_imdf5")
+
+[node name="LevelNum" type="TextureRect" parent="." unique_id=1421823191]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 10.0
+offset_right = 132.0
+offset_bottom = 42.0
+texture = SubResource("AtlasTexture_qygop")
+script = ExtResource("6_2bk65")
+numbers = Array[Texture]([null, SubResource("AtlasTexture_2bk65"), SubResource("AtlasTexture_dojgg"), SubResource("AtlasTexture_egsd8"), SubResource("AtlasTexture_em1em")])
+
+[node name="LevelName" type="TextureRect" parent="." unique_id=1116533261]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 8.0
+offset_right = 284.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_fwhn2")
 
 [node name="LevelIndicator" type="Label" parent="." unique_id=523876004]
+visible = false
 layout_mode = 0
 offset_left = 55.0
 offset_top = 15.0

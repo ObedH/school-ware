@@ -12,14 +12,17 @@ var timer: float
 @onready var notebook_2: Notebook = $Notebook2
 @onready var notebook_3: Notebook = $Notebook3
 @onready var notebook_4: Notebook = $Notebook4
-@onready var live_counter: Label = $LiveCounter
-@onready var level_indicator: Label = $LevelIndicator
+@onready var number: TextureRect = $Number
+@onready var level_num: TextureRect = $LevelNum
+@onready var level_name: TextureRect = $LevelName
 
 
-func start(level_name: String) -> void:
+
+func start(level_tex: Texture) -> void:
 	timer = 0
-	live_counter.text = "%d Lives" % Global.lives
-	level_indicator.text = "Level %d: %s" % [Global.level_num, level_name]
+	number.show_number(Global.lives)
+	level_num.show_number(Global.level_num)
+	level_name.texture = level_tex
 	match Global.lives:
 		3:
 			notebook_4.destroy()

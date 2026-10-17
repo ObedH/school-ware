@@ -5,6 +5,7 @@ extends Node2D
 @export var minigame_name: String
 @export var minigame_time: float = 10.0
 @export var director: Node2D
+@export var minigame_name_tex: Texture
 
 var healthbar_display_tween: Tween
 var minigame_timer: float
@@ -17,7 +18,7 @@ var timering: bool = false
 func _ready() -> void:
 	healthbar_display.finished.connect(_on_healthbar_display_finished)
 	get_tree().paused = true
-	healthbar_display.start(minigame_name)
+	healthbar_display.start(minigame_name_tex)
 	minigame_timer = minigame_time
 	time_displayer.text = "Text: %.3f" % minigame_timer
 

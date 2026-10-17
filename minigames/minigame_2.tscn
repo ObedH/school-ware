@@ -5,6 +5,10 @@
 [ext_resource type="Script" uid="uid://khdmy03m0xd7" path="res://minigames/minigame_2.gd" id="2_b8rp4"]
 [ext_resource type="Texture2D" uid="uid://d1xdi15v2sols" path="res://ui/ui_sheet.png" id="3_m4c8i"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_u0oex"]
+atlas = ExtResource("3_m4c8i")
+region = Rect2(64, 48, 144, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_b8rp4"]
 atlas = ExtResource("3_m4c8i")
 region = Rect2(16, 16, 32, 32)
@@ -79,6 +83,7 @@ region = Rect2(208, 144, 32, 16)
 minigame_name = "Pre-Algebra"
 minigame_time = 5.0
 director = NodePath("Controller")
+minigame_name_tex = SubResource("AtlasTexture_u0oex")
 
 [node name="Controller" type="Node2D" parent="." index="0" unique_id=820061001]
 script = ExtResource("2_b8rp4")
