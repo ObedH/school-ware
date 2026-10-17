@@ -6,15 +6,27 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f2vb4"]
 atlas = ExtResource("3_e0arn")
-region = Rect2(0, 0, 32, 16)
+region = Rect2(160, 0, 32, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_037ec"]
 atlas = ExtResource("3_e0arn")
-region = Rect2(64, 0, 32, 16)
+region = Rect2(192, 0, 32, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y1o0p"]
 atlas = ExtResource("3_e0arn")
+region = Rect2(224, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0arn"]
+atlas = ExtResource("3_e0arn")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8yej"]
+atlas = ExtResource("3_e0arn")
 region = Rect2(32, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3y2rt"]
+atlas = ExtResource("3_e0arn")
+region = Rect2(64, 0, 32, 16)
 
 [node name="Menu" type="Control" unique_id=273399457]
 layout_mode = 3
@@ -42,22 +54,16 @@ texture_pressed = SubResource("AtlasTexture_037ec")
 texture_hover = SubResource("AtlasTexture_y1o0p")
 stretch_mode = 5
 
-[node name="SettingsButton" type="TextureButton" parent="." unique_id=1177876462]
+[node name="QuitButton" type="TextureButton" parent="." unique_id=1769286194]
 layout_mode = 0
-offset_left = 205.0
-offset_top = 80.0
-offset_right = 245.0
-offset_bottom = 120.0
-stretch_mode = 5
-
-[node name="QuitButton" type="TextureButton" parent="." unique_id=1676804905]
-layout_mode = 0
-offset_left = 207.0
-offset_top = 128.0
-offset_right = 247.0
-offset_bottom = 168.0
+offset_left = 185.0
+offset_top = 88.0
+offset_right = 281.0
+offset_bottom = 136.0
+texture_normal = SubResource("AtlasTexture_e0arn")
+texture_pressed = SubResource("AtlasTexture_r8yej")
+texture_hover = SubResource("AtlasTexture_3y2rt")
 stretch_mode = 5
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
