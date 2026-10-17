@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://0ce2jtlmppm7"]
+
+[ext_resource type="Texture2D" uid="uid://dhi0a3bigekdc" path="res://scenes/healthbar_display/healthbar_display_bg.png" id="1_tg2mq"]
+[ext_resource type="Script" uid="uid://c4nhba5whv50p" path="res://scenes/death/death.gd" id="1_w7y6c"]
+
+[node name="Death" type="Control" unique_id=1675644848]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w7y6c")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1089253517]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_tg2mq")
+
+[node name="YouDied" type="Label" parent="." unique_id=1347411621]
+layout_mode = 0
+offset_left = 123.0
+offset_top = 32.0
+offset_right = 197.0
+offset_bottom = 55.0
+text = "You Died!"
+
+[node name="Button" type="Button" parent="." unique_id=397731372]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 86.0
+offset_right = 216.0
+offset_bottom = 117.0
+text = "Back to Menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

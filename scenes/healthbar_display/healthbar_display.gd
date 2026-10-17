@@ -24,10 +24,16 @@ func start(level_name: String) -> void:
 		3:
 			notebook_4.destroy()
 		2:
+			notebook_4.destroy()
 			notebook_3.destroy()
 		1:
+			notebook_4.destroy()
+			notebook_3.destroy()
 			notebook_2.destroy()
 		0:
+			notebook_4.destroy()
+			notebook_3.destroy()
+			notebook_2.destroy()
 			notebook_1.destroy()
 
 

@@ -14,3 +14,17 @@ func next_level() -> void:
 		return
 	level_num += 1
 	get_tree().change_scene_to_file(levels[level_num - 1])
+
+
+func die() -> void:
+	lives -= 1
+	if lives >= 1:
+		get_tree().change_scene_to_file(levels[level_num - 1])
+	else:
+		get_tree().change_scene_to_file("res://scenes/death/death.tscn")
+
+
+func restart() -> void:
+	lives = 4
+	level_num = 1
+	get_tree().change_scene_to_file("res://scenes/menu/menu.tscn")

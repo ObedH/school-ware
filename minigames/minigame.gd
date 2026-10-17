@@ -28,7 +28,7 @@ func _process(delta: float) -> void:
 		time_displayer.text = "Time: %.3f" % minigame_timer
 		
 		if minigame_timer <= 0:
-			print("You died!")
+			Global.die()
 	
 
 
@@ -50,5 +50,3 @@ func _on_healthbar_display_finished() -> void:
 		await director.start()
 	
 	timering = true
-	
-	print("Hello!")
