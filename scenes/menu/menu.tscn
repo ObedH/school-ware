@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://c3vikrw7irfeg" path="res://scenes/menu/background.png" id="2_mcvr8"]
 [ext_resource type="Texture2D" uid="uid://d1xdi15v2sols" path="res://ui/ui_sheet.png" id="3_e0arn"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_vx0oi"]
+font_color = Color(0, 0, 0, 1)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_f2vb4"]
 atlas = ExtResource("3_e0arn")
 region = Rect2(160, 0, 32, 16)
@@ -50,6 +53,7 @@ offset_top = 143.0
 offset_right = 124.0
 offset_bottom = 166.0
 text = "Best Time: "
+label_settings = SubResource("LabelSettings_vx0oi")
 
 [node name="PlayButton" type="TextureButton" parent="." unique_id=2006450903]
 layout_mode = 0
