@@ -25,6 +25,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if timering:
+		Global.total_time += delta
 		minigame_timer -= delta
 		time_displayer.text = "Time: %.3f" % minigame_timer
 		

@@ -1,0 +1,168 @@
+[gd_scene format=3 uid="uid://bwnabg0etbala"]
+
+[ext_resource type="PackedScene" uid="uid://deaqoee4cjydv" path="res://minigames/minigame_base.tscn" id="1_4jy3e"]
+[ext_resource type="Script" uid="uid://qtmmogmckos8" path="res://minigames/minigame_3.gd" id="2_7gtme"]
+[ext_resource type="Texture2D" uid="uid://bu3ejjm8e7eb" path="res://minigames/thingamabobs.png" id="2_ibo2y"]
+[ext_resource type="Texture2D" uid="uid://d1xdi15v2sols" path="res://ui/ui_sheet.png" id="3_li4hb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6i7n"]
+atlas = ExtResource("3_li4hb")
+region = Rect2(254, 94, 99, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vx6a2"]
+atlas = ExtResource("3_li4hb")
+region = Rect2(0, 160, 160, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivu7a"]
+atlas = ExtResource("3_li4hb")
+region = Rect2(160, 160, 192, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7wlo"]
+atlas = ExtResource("2_ibo2y")
+region = Rect2(64, 80, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iaxt1"]
+atlas = ExtResource("2_ibo2y")
+region = Rect2(64, 32, 16, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6mxg"]
+atlas = ExtResource("2_ibo2y")
+region = Rect2(84, 34, 26, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i23cu"]
+atlas = ExtResource("2_ibo2y")
+region = Rect2(16, 80, 17, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_li4hb"]
+atlas = ExtResource("2_ibo2y")
+region = Rect2(16, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8ex3"]
+atlas = ExtResource("2_ibo2y")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66oud"]
+atlas = ExtResource("2_ibo2y")
+region = Rect2(80, 0, 27, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h50ts"]
+atlas = ExtResource("2_ibo2y")
+region = Rect2(64, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7wke"]
+atlas = ExtResource("2_ibo2y")
+region = Rect2(106, 16, 22, 16)
+
+[node name="Minigame3" unique_id=1444785987 node_paths=PackedStringArray("director") instance=ExtResource("1_4jy3e")]
+minigame_name = "Biology"
+director = NodePath("Controller")
+minigame_name_tex = SubResource("AtlasTexture_f6i7n")
+
+[node name="Controller" type="Node2D" parent="." index="0" unique_id=245092844]
+script = ExtResource("2_7gtme")
+
+[node name="Background" type="ColorRect" parent="." index="1" unique_id=1399112993]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 320.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.38039216, 0.63529414, 1, 1)
+
+[node name="Instructions1" type="TextureRect" parent="." index="2" unique_id=520243007]
+offset_left = 80.0
+offset_top = 12.0
+offset_right = 240.0
+offset_bottom = 44.0
+texture = SubResource("AtlasTexture_vx6a2")
+
+[node name="Instructions2" type="TextureRect" parent="." index="3" unique_id=722401466]
+offset_left = 62.0
+offset_top = 35.0
+offset_right = 254.0
+offset_bottom = 67.0
+texture = SubResource("AtlasTexture_ivu7a")
+
+[node name="Scissors" type="TextureButton" parent="." index="4" unique_id=1238895308]
+offset_left = 25.0
+offset_top = 69.0
+offset_right = 79.0
+offset_bottom = 123.0
+texture_normal = SubResource("AtlasTexture_e7wlo")
+stretch_mode = 0
+
+[node name="Mouse" type="TextureButton" parent="." index="5" unique_id=105944762]
+offset_left = 153.0
+offset_top = 102.0
+offset_right = 169.0
+offset_bottom = 135.0
+texture_normal = SubResource("AtlasTexture_iaxt1")
+stretch_mode = 0
+
+[node name="Pencil" type="TextureButton" parent="." index="6" unique_id=1053506626]
+offset_left = 107.0
+offset_top = 136.0
+offset_right = 133.0
+offset_bottom = 162.0
+texture_normal = SubResource("AtlasTexture_s6mxg")
+stretch_mode = 0
+
+[node name="Lamp" type="TextureButton" parent="." index="7" unique_id=439509985]
+offset_left = 192.0
+offset_top = 125.0
+offset_right = 209.0
+offset_bottom = 173.0
+texture_normal = SubResource("AtlasTexture_i23cu")
+stretch_mode = 0
+
+[node name="Apple" type="TextureButton" parent="." index="8" unique_id=1207895818]
+offset_left = 93.0
+offset_top = 63.0
+offset_right = 147.0
+offset_bottom = 117.0
+texture_normal = SubResource("AtlasTexture_li4hb")
+stretch_mode = 0
+
+[node name="Flower" type="TextureButton" parent="." index="9" unique_id=1439683985]
+offset_left = 264.0
+offset_top = 80.0
+offset_right = 280.0
+offset_bottom = 112.0
+texture_normal = SubResource("AtlasTexture_g8ex3")
+stretch_mode = 0
+
+[node name="Banana" type="TextureButton" parent="." index="10" unique_id=1800889767]
+offset_left = 186.0
+offset_top = 83.0
+offset_right = 213.0
+offset_bottom = 115.0
+texture_normal = SubResource("AtlasTexture_66oud")
+stretch_mode = 0
+
+[node name="Washington" type="TextureButton" parent="." index="11" unique_id=1797505500]
+offset_left = 32.0
+offset_top = 119.0
+offset_right = 84.0
+offset_bottom = 169.0
+texture_normal = SubResource("AtlasTexture_h50ts")
+stretch_mode = 0
+
+[node name="Duck" type="TextureButton" parent="." index="12" unique_id=2078428278]
+offset_left = 222.0
+offset_top = 127.0
+offset_right = 260.0
+offset_bottom = 157.0
+texture_normal = SubResource("AtlasTexture_a7wke")
+stretch_mode = 0
+
+[connection signal="pressed" from="Scissors" to="Controller" method="_on_scissors_pressed"]
+[connection signal="pressed" from="Mouse" to="Controller" method="_on_mouse_pressed"]
+[connection signal="pressed" from="Pencil" to="Controller" method="_on_pencil_pressed"]
+[connection signal="pressed" from="Lamp" to="Controller" method="_on_lamp_pressed"]
+[connection signal="pressed" from="Apple" to="Controller" method="_on_apple_pressed"]
+[connection signal="pressed" from="Flower" to="Controller" method="_on_flower_pressed"]
+[connection signal="pressed" from="Banana" to="Controller" method="_on_banana_pressed"]
+[connection signal="pressed" from="Washington" to="Controller" method="_on_washington_pressed"]
+[connection signal="pressed" from="Duck" to="Controller" method="_on_duck_pressed"]

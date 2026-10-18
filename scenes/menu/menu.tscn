@@ -43,6 +43,14 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("2_mcvr8")
 
+[node name="BestTime" type="Label" parent="." unique_id=300841293]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 143.0
+offset_right = 124.0
+offset_bottom = 166.0
+text = "Best Time: "
+
 [node name="PlayButton" type="TextureButton" parent="." unique_id=2006450903]
 layout_mode = 0
 offset_left = 184.0
