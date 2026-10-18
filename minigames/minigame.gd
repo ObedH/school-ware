@@ -30,6 +30,7 @@ func _process(delta: float) -> void:
 		time_displayer.text = "Time: %.3f" % minigame_timer
 		
 		if minigame_timer <= 0:
+			AudioManager.play_exp()
 			Global.die()
 	
 

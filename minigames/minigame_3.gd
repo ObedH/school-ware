@@ -26,44 +26,53 @@ func do_completion_check() -> void:
 func _on_apple_pressed() -> void:
 	apple_pressed = true
 	apple.hide()
+	AudioManager.play_nxlv()
 	do_completion_check()
 
 
 func _on_flower_pressed() -> void:
 	flower_pressed = true
 	flower.hide()
+	AudioManager.play_nxlv()
 	do_completion_check()
 
 
 func _on_banana_pressed() -> void:
 	banana_pressed = true
 	banana.hide()
+	AudioManager.play_nxlv()
 	do_completion_check()
 
 
 func _on_washington_pressed() -> void:
 	washington_pressed = true
 	washington.hide()
+	AudioManager.play_nxlv()
 	do_completion_check()
 
 
 func _on_duck_pressed() -> void:
 	duck_pressed = true
 	duck.hide()
+	AudioManager.play_nxlv()
 	do_completion_check()
 
 
 func _on_mouse_pressed() -> void:
+	AudioManager.play_exp()
 	Global.die()
 
 
 func _on_scissors_pressed() -> void:
+	AudioManager.play_exp()
 	Global.die()
 
 
 func _on_pencil_pressed() -> void:
+	AudioManager.play_exp()
 	Global.die()
 
 
 func _on_lamp_pressed() -> void:
+	AudioManager.play_exp()
 	Global.die()

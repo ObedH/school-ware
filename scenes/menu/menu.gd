@@ -11,11 +11,8 @@ func _ready() -> void:
 		best_time.text = "Best Time: %.3fs" % Global.best_time
 
 func _on_play_button_pressed() -> void:
+	AudioManager.play_se()
 	get_tree().change_scene_to_file("res://minigames/minigame_1.tscn")
-
-
-func _on_settings_button_pressed() -> void:
-	pass # Replace with function body.
 
 
 func _on_quit_button_pressed() -> void:

@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dckq1nvymhi6c"]
+
+[ext_resource type="Script" uid="uid://dta74pf85v3lk" path="res://globals/audio_manager.gd" id="1_exsf0"]
+[ext_resource type="AudioStream" uid="uid://wurbjij3tspr" path="res://sounds/pickupCoin.wav" id="2_hilj8"]
+[ext_resource type="AudioStream" uid="uid://cdiq6qxn4kr6f" path="res://sounds/explosion.wav" id="3_3uslp"]
+[ext_resource type="AudioStream" uid="uid://dfhw8ei1oe82" path="res://sounds/gameStartup.wav" id="4_dd2wf"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_e7wlo"]
+random_pitch = 1.122462
+random_volume_offset_db = 2.0
+streams_count = 1
+stream_0/stream = ExtResource("2_hilj8")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_vx6a2"]
+random_pitch = 1.122462
+random_volume_offset_db = 2.0
+streams_count = 1
+stream_0/stream = ExtResource("3_3uslp")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_3uslp"]
+random_pitch = 1.122462
+random_volume_offset_db = 2.0
+streams_count = 1
+stream_0/stream = ExtResource("4_dd2wf")
+
+[node name="AudioManager" type="Node" unique_id=1086633550]
+script = ExtResource("1_exsf0")
+
+[node name="NxLvSFX" type="AudioStreamPlayer" parent="." unique_id=1057756567]
+process_mode = 3
+stream = SubResource("AudioStreamRandomizer_e7wlo")
+
+[node name="ExpSFX" type="AudioStreamPlayer" parent="." unique_id=997970913]
+process_mode = 3
+stream = SubResource("AudioStreamRandomizer_vx6a2")
+
+[node name="Select" type="AudioStreamPlayer" parent="." unique_id=1286174802]
+process_mode = 3
+stream = SubResource("AudioStreamRandomizer_3uslp")

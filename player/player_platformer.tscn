@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://nctwbmej2vsk" path="res://player/player.png" id="1_g1s81"]
 [ext_resource type="Script" uid="uid://ddtcg8v30ry84" path="res://player/player_platformer.gd" id="1_y8kmu"]
+[ext_resource type="AudioStream" uid="uid://b6yxeybveickp" path="res://sounds/jump.wav" id="3_7yiu1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e7wlo"]
 size = Vector2(10, 14)
@@ -23,6 +24,12 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vx6a2"]
 size = Vector2(6, 12)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_e7wlo"]
+random_pitch = 1.122462
+random_volume_offset_db = 2.0
+streams_count = 1
+stream_0/stream = ExtResource("3_7yiu1")
 
 [node name="Player" type="CharacterBody2D" unique_id=805804944]
 script = ExtResource("1_y8kmu")
@@ -48,5 +55,8 @@ shape = SubResource("RectangleShape2D_vx6a2")
 process_callback = 0
 wait_time = 0.1
 one_shot = true
+
+[node name="JumpSFX" type="AudioStreamPlayer" parent="." unique_id=253979349]
+stream = SubResource("AudioStreamRandomizer_e7wlo")
 
 [connection signal="timeout" from="JBTimer" to="." method="_on_jb_timer_timeout"]
