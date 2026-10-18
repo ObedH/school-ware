@@ -20,7 +20,7 @@ func _ready() -> void:
 	get_tree().paused = true
 	healthbar_display.start(minigame_name_tex)
 	minigame_timer = minigame_time
-	time_displayer.text = "Text: %.3f" % minigame_timer
+	time_displayer.text = "Time: %.3f" % minigame_timer
 
 
 func _process(delta: float) -> void:

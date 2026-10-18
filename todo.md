@@ -1,7 +1,6 @@
 # TODO
-- Add more levels for more subjects
-	- Next: Prealgebra
-- Maybe coyote time or better platformer movement
+- Make a third level about Biology
+	- Click on all the living organisms
 - Maybe animate George Washington
+	- Just adding squash and stretch should be enough
 - Make a real death screen
-- Refine the pixel art ui
