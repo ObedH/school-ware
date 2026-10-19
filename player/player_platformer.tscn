@@ -146,6 +146,11 @@ process_callback = 0
 wait_time = 0.1
 one_shot = true
 
+[node name="CBTimer" type="Timer" parent="." unique_id=1811559111]
+process_callback = 0
+wait_time = 0.1
+one_shot = true
+
 [node name="JumpSFX" type="AudioStreamPlayer" parent="." unique_id=253979349]
 stream = SubResource("AudioStreamRandomizer_e7wlo")
 
@@ -153,3 +158,4 @@ stream = SubResource("AudioStreamRandomizer_e7wlo")
 libraries/ = SubResource("AnimationLibrary_krk5d")
 
 [connection signal="timeout" from="JBTimer" to="." method="_on_jb_timer_timeout"]
+[connection signal="timeout" from="CBTimer" to="." method="_on_cb_timer_timeout"]
