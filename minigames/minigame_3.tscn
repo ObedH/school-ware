@@ -55,6 +55,7 @@ region = Rect2(106, 16, 22, 16)
 
 [node name="Minigame3" unique_id=1444785987 node_paths=PackedStringArray("director") instance=ExtResource("1_4jy3e")]
 minigame_name = "Biology"
+minigame_time = 4.0
 director = NodePath("Controller")
 minigame_name_tex = SubResource("AtlasTexture_f6i7n")
 

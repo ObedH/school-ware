@@ -112,6 +112,7 @@ _data = {
 
 [node name="Minigame1" unique_id=1444785987 node_paths=PackedStringArray("director") instance=ExtResource("1_0atlx")]
 minigame_name = "History"
+minigame_time = 5.0
 director = NodePath("Director")
 minigame_name_tex = SubResource("AtlasTexture_ktgju")
 
