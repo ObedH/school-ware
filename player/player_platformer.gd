@@ -15,6 +15,7 @@ var jb: bool = false
 @onready var sprite: AnimatedSprite2D = $Sprite
 @onready var jb_timer: Timer = $JBTimer
 @onready var jump_sfx: AudioStreamPlayer = $JumpSFX
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
 func _physics_process(delta: float) -> void:
@@ -28,6 +29,8 @@ func _physics_process(delta: float) -> void:
 			else:
 				velocity += Vector2.DOWN * GRAVITY * STOP_MULT * delta
 	else:
+		if is_falling:
+			animation_player.play("squash")
 		is_falling = false
 
 	# Handle jump.
@@ -38,6 +41,7 @@ func _physics_process(delta: float) -> void:
 	if jb and is_on_floor() and not input_locked:
 		velocity.y = JUMP_VELOCITY
 		jump_sfx.play()
+		animation_player.play("stretch")
 		jb = false
 	
 	if Input.is_action_just_released("jump") and not input_locked:
