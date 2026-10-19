@@ -1,11 +1,12 @@
 # SchoolWare
 
-<img width="1280" height="720" alt="ezgif com-cut" src="https://github.com/user-attachments/assets/c4f6b722-4f2b-47f9-acd3-ef9b250f01fe" />
 
 **SchoolWare is a short WarioWare-stye puzzle game where you have to complete 
 school-related tasks in a limited amount of time.**
 
 *This project was made for [Hack Club Stardance](https://stardance.hackclub.com/).*
+
+<img width="1280" height="720" alt="ezgif com-cut" src="https://github.com/user-attachments/assets/c4f6b722-4f2b-47f9-acd3-ef9b250f01fe" />
 
 ## How to Play
 [![Try it](https://github.com/user-attachments/assets/8ab3f8e8-0f10-4974-ae44-0061325393b3)](http://obedh.itch.io/school-ware)
